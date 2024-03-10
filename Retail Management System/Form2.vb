@@ -4,19 +4,8 @@ Public Class Form2
     Private connectionString As String = "Server=localhost;Database=rm;User ID=root;Password=admin;"
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Initialize controls visibility
-        InitializeControlsVisibility()
     End Sub
 
-    Private Sub InitializeControlsVisibility()
-        ' Hide the controls initially
-        Guna2Button4.Visible = False
-        Guna2Button5.Visible = False
-        Guna2Button10.Visible = False
-        Guna2GroupBox2.Visible = False
-        Guna2GroupBox3.Visible = False
-        Guna2GroupBox4.Visible = False
-        Guna2GroupBox1.Visible = False ' Add this line to hide Guna2GroupBox1
-    End Sub
 
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
@@ -144,6 +133,37 @@ Public Class Form2
         Else
             MessageBox.Show("Please select a row to delete.")
         End If
+    End Sub
+
+    Private Sub Guna2Button15_Click(sender As Object, e As EventArgs) Handles Guna2Button15.Click
+        Try
+            ' Ensure the DataGridView is not in edit mode to commit any pending changes
+            Guna2DataGridView1.EndEdit()
+
+            ' Get the DataTable from the DataGridView's DataSource
+            Dim dt As DataTable = DirectCast(Guna2DataGridView1.DataSource, DataTable)
+
+            ' Check if there are any changes to commit
+            If dt.GetChanges() IsNot Nothing Then
+                Using connection As New MySqlConnection(connectionString)
+                    ' Create a data adapter with the SELECT, INSERT, UPDATE, and DELETE commands
+                    Dim da As New MySqlDataAdapter("SELECT * FROM product", connection)
+                    Dim cb As New MySqlCommandBuilder(da)
+
+                    ' Update the database with the changes in the DataTable
+                    da.Update(dt)
+
+                    ' Notify the user that changes have been saved
+                    MessageBox.Show("Changes saved successfully.")
+                End Using
+            Else
+                MessageBox.Show("No changes to save.")
+            End If
+        Catch ex As MySqlException
+            MessageBox.Show($"MySQL Error: {ex.Message}")
+        Catch ex As Exception
+            MessageBox.Show($"An error occurred: {ex.Message}")
+        End Try
     End Sub
 
 End Class
