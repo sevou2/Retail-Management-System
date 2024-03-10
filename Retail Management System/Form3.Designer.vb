@@ -63,11 +63,11 @@ Partial Class Form3
         DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
         Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Guna2DataGridView1.GridColor = Color.FromArgb(CByte(231), CByte(229), CByte(255))
-        Guna2DataGridView1.Location = New Point(199, 66)
+        Guna2DataGridView1.Location = New Point(165, 55)
         Guna2DataGridView1.Name = "Guna2DataGridView1"
         Guna2DataGridView1.RowHeadersVisible = False
         Guna2DataGridView1.RowHeadersWidth = 45
-        Guna2DataGridView1.Size = New Size(427, 219)
+        Guna2DataGridView1.Size = New Size(506, 230)
         Guna2DataGridView1.TabIndex = 0
         Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White
         Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
