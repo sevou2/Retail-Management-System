@@ -723,7 +723,7 @@ Partial Class Form2
         Guna2Button8.ImageAlign = HorizontalAlignment.Left
         Guna2Button8.ImageOffset = New Point(2, 0)
         Guna2Button8.ImageSize = New Size(22, 22)
-        Guna2Button8.Location = New Point(16, 354)
+        Guna2Button8.Location = New Point(16, 359)
         Guna2Button8.Name = "Guna2Button8"
         Guna2Button8.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Button8.Size = New Size(158, 43)
