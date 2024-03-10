@@ -1,9 +1,9 @@
 ﻿Public Class Form2
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Guna2Button8_Click(sender As Object, e As EventArgs) Handles Guna2Button8.Click
 
-    End Sub
-
-    Private Sub Guna2GroupBox1_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox1.Click
+        Dim f3 As New Form3()
+        Me.Hide()
+        f3.Show()
 
     End Sub
 End Class
