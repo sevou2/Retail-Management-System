@@ -2,11 +2,15 @@
 
 Public Class Form2
 
-
-
     Private connectionString As String = "Server=localhost;Database=rm;User ID=root;Password=admin;"
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Initialize controls visibility
+        Guna2Button4.Visible = False
+        Guna2GroupBox2.Visible = False
+        Guna2Button5.Visible = False
+        Guna2GroupBox3.Visible = False
+        Guna2GroupBox4.Visible = False
+        Guna2GroupBox5.Visible = False
     End Sub
 
 
@@ -246,5 +250,18 @@ Public Class Form2
     Private Sub Guna2Button13_Click(sender As Object, e As EventArgs) Handles Guna2Button13.Click
         Form3.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Guna2Button2_Click_1(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Guna2Button5.Visible = True
+        Guna2GroupBox3.Visible = True
+    End Sub
+
+    Private Sub Guna2Button7_Click(sender As Object, e As EventArgs) Handles Guna2Button7.Click
+        Guna2GroupBox4.Visible = True
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        Guna2GroupBox5.Visible = True
     End Sub
 End Class
