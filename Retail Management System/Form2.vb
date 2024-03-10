@@ -243,8 +243,7 @@ Public Class Form2
             MessageBox.Show($"An error occurred: {ex.Message}")
         End Try
     End Sub
-
-    Private Sub Guna2Button8_Click(sender As Object, e As EventArgs) Handles Guna2Button8.Click
+    Private Sub Guna2Button13_Click(sender As Object, e As EventArgs) Handles Guna2Button13.Click
         Form3.Show()
         Me.Hide()
     End Sub
