@@ -26,15 +26,12 @@ Partial Class Form3
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(components)
         Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
-        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         CType(Guna2DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -100,25 +97,6 @@ Partial Class Form3
         Guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(CByte(231), CByte(229), CByte(255))
         Guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(CByte(71), CByte(69), CByte(94))
         ' 
-        ' Guna2Button1
-        ' 
-        Guna2Button1.BorderRadius = 15
-        Guna2Button1.CustomizableEdges = CustomizableEdges5
-        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button1.FillColor = Color.FromArgb(CByte(252), CByte(196), CByte(139))
-        Guna2Button1.Font = New Font("Segoe UI", 9F)
-        Guna2Button1.ForeColor = SystemColors.WindowText
-        Guna2Button1.Location = New Point(265, 252)
-        Guna2Button1.Margin = New Padding(3, 2, 3, 2)
-        Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges6
-        Guna2Button1.Size = New Size(174, 39)
-        Guna2Button1.TabIndex = 1
-        Guna2Button1.Text = "Download PDF"
-        ' 
         ' Guna2Button2
         ' 
         Guna2Button2.BorderRadius = 15
@@ -130,7 +108,7 @@ Partial Class Form3
         Guna2Button2.FillColor = Color.FromArgb(CByte(252), CByte(196), CByte(139))
         Guna2Button2.Font = New Font("Segoe UI", 9F)
         Guna2Button2.ForeColor = SystemColors.WindowText
-        Guna2Button2.Location = New Point(12, 252)
+        Guna2Button2.Location = New Point(158, 252)
         Guna2Button2.Margin = New Padding(3, 2, 3, 2)
         Guna2Button2.Name = "Guna2Button2"
         Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
@@ -149,7 +127,7 @@ Partial Class Form3
         Guna2Button3.FillColor = Color.FromArgb(CByte(252), CByte(196), CByte(139))
         Guna2Button3.Font = New Font("Segoe UI", 9F)
         Guna2Button3.ForeColor = SystemColors.WindowText
-        Guna2Button3.Location = New Point(514, 252)
+        Guna2Button3.Location = New Point(413, 252)
         Guna2Button3.Margin = New Padding(3, 2, 3, 2)
         Guna2Button3.Name = "Guna2Button3"
         Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges2
@@ -164,7 +142,6 @@ Partial Class Form3
         ClientSize = New Size(700, 355)
         Controls.Add(Guna2Button3)
         Controls.Add(Guna2Button2)
-        Controls.Add(Guna2Button1)
         Controls.Add(Guna2DataGridView1)
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(3, 2, 3, 2)
@@ -175,7 +152,6 @@ Partial Class Form3
     End Sub
 
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2DataGridView1 As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
