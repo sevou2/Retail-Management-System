@@ -9,14 +9,15 @@ Public Class Form2
 
     Private Sub InitializeControlsVisibility()
         ' Hide the controls initially
-        Guna2Button4.Visible = False ' Assuming you want this hidden at start; adjust as needed
+        Guna2Button4.Visible = False
         Guna2Button5.Visible = False
         Guna2Button10.Visible = False
         Guna2GroupBox2.Visible = False
         Guna2GroupBox3.Visible = False
         Guna2GroupBox4.Visible = False
-        Guna2GroupBox1.Visible = False
+        Guna2GroupBox1.Visible = False ' Add this line to hide Guna2GroupBox1
     End Sub
+
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         ' Show Guna2Button4 when Guna2Button1 is clicked
@@ -28,24 +29,23 @@ Public Class Form2
         Guna2GroupBox2.Visible = True
     End Sub
     Private Sub Guna2Button12_Click(sender As Object, e As EventArgs) Handles Guna2Button12.Click
-        Dim pname As String = Guna2TextBox1.Text
-        Dim pqtyStr As String = Guna2TextBox2.Text
-        Dim pqty As Integer
-
-        If Not Integer.TryParse(pqtyStr, pqty) Then
-            MessageBox.Show("Please enter a valid quantity.")
-            Return
-        End If
-
         Try
+            Dim pname As String = Guna2TextBox1.Text
+            Dim pqtyStr As String = Guna2TextBox2.Text
+            Dim pqty As Integer
+
+            If Not Integer.TryParse(pqtyStr, pqty) Then
+                MessageBox.Show("Please enter a valid quantity.")
+                Return
+            End If
+
             Using connection As New MySqlConnection(connectionString)
+                connection.Open()
                 Dim query As String = "INSERT INTO product (pname, pqty) VALUES (@pname, @pqty)"
 
                 Using cmd As New MySqlCommand(query, connection)
                     cmd.Parameters.AddWithValue("@pname", pname)
                     cmd.Parameters.AddWithValue("@pqty", pqty)
-
-                    connection.Open()
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Product added successfully.")
                 End Using
@@ -54,6 +54,7 @@ Public Class Form2
             MessageBox.Show($"An error occurred: {ex.Message}")
         End Try
     End Sub
+
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         Guna2GroupBox3.Visible = True
@@ -87,16 +88,62 @@ Public Class Form2
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
+    Private Sub Guna2Button13_Click(sender As Object, e As EventArgs) Handles Guna2Button13.Click
+        UpdateQuantity(1)
+    End Sub
+    Private Sub Guna2Button14_Click(sender As Object, e As EventArgs) Handles Guna2Button14.Click
+        UpdateQuantity(-1)
+    End Sub
+    Private Sub Guna2Button9_Click(sender As Object, e As EventArgs) Handles Guna2Button9.Click
+        DeleteProduct()
+    End Sub
+    ' Function to update quantity (add or remove)
+    Private Sub UpdateQuantity(quantityChange As Integer)
+        ' Check if any row is selected
+        If Guna2DataGridView1.SelectedRows.Count > 0 Then
+            ' Get the selected row
+            Dim selectedRow As DataGridViewRow = Guna2DataGridView1.SelectedRows(0)
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+            ' Get the current quantity value from the selected row
+            Dim currentQty As Integer = Convert.ToInt32(selectedRow.Cells("pqty").Value)
 
-        Guna2GroupBox4.Visible = True
+            ' Update the quantity with the change
+            currentQty += quantityChange
 
+            ' Ensure the quantity doesn't go below zero
+            If currentQty < 0 Then
+                MessageBox.Show("Quantity cannot be less than zero.")
+                Return
+            End If
+
+            ' Update the DataGridView with the new quantity value
+            selectedRow.Cells("pqty").Value = currentQty
+
+            ' Optionally, you can update the database with the new quantity value here
+            ' UpdateDatabaseWithNewQuantity(selectedRow.Cells("pid").Value, currentQty)
+        Else
+            MessageBox.Show("Please select a row to update.")
+        End If
     End Sub
 
-    Private Sub Guna2Button7_Click(sender As Object, e As EventArgs) Handles Guna2Button7.Click
+    ' Function to delete the selected product
+    Private Sub DeleteProduct()
+        ' Check if any row is selected
+        If Guna2DataGridView1.SelectedRows.Count > 0 Then
+            ' Get the selected row
+            Dim selectedRow As DataGridViewRow = Guna2DataGridView1.SelectedRows(0)
 
-        Guna2GroupBox5.Visible = True
+            ' Optionally, you can get the product ID for further processing
+            ' Dim productId As Integer = Convert.ToInt32(selectedRow.Cells("pid").Value)
 
+            ' Remove the selected row from the DataGridView
+            Guna2DataGridView1.Rows.Remove(selectedRow)
+
+            ' Optionally, you can delete the product from the database here
+            ' DeleteProductFromDatabase(productId)
+        Else
+            MessageBox.Show("Please select a row to delete.")
+        End If
     End Sub
+
 End Class
