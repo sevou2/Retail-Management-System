@@ -177,8 +177,75 @@ Public Class Form2
             MessageBox.Show($"An error occurred: {ex.Message}")
         End Try
     End Sub
+    Private Sub Guna2Button10_Click(sender As Object, e As EventArgs) Handles Guna2Button10.Click
+        LoadUsersTable()
+    End Sub
 
-    Private Sub Guna2GroupBox3_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox3.Click
+    Private Sub Guna2Button11_Click(sender As Object, e As EventArgs) Handles Guna2Button11.Click
+        SaveChangesToUsersTable()
+    End Sub
 
+    Private Sub LoadUsersTable()
+        Try
+            Using connection As New MySqlConnection(connectionString)
+                ' Open the database connection
+                connection.Open()
+
+                ' The SQL query to fetch all records from the users table
+                Dim query As String = "SELECT * FROM users"
+
+                ' Create a data adapter to execute the query and fill the data table
+                Using da As New MySqlDataAdapter(query, connection)
+                    ' Create a DataTable to hold the query results
+                    Dim dt As New DataTable()
+
+                    ' Fill the DataTable with the results of the SELECT query
+                    da.Fill(dt)
+
+                    ' Assign the DataTable as the DataSource for Guna2DataGridView2
+                    Guna2DataGridView2.DataSource = dt
+                End Using
+            End Using
+        Catch ex As MySqlException
+            MessageBox.Show("MySQL Error: " & ex.Message)
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SaveChangesToUsersTable()
+        Try
+            ' Ensure the DataGridView is not in edit mode to commit any pending changes
+            Guna2DataGridView2.EndEdit()
+
+            ' Get the DataTable from the DataGridView's DataSource
+            Dim dt As DataTable = DirectCast(Guna2DataGridView2.DataSource, DataTable)
+
+            ' Check if there are any changes to commit
+            If dt.GetChanges() IsNot Nothing Then
+                Using connection As New MySqlConnection(connectionString)
+                    ' Create a data adapter with the SELECT, INSERT, UPDATE, and DELETE commands
+                    Dim da As New MySqlDataAdapter("SELECT * FROM users", connection)
+                    Dim cb As New MySqlCommandBuilder(da)
+
+                    ' Update the database with the changes in the DataTable
+                    da.Update(dt)
+
+                    ' Notify the user that changes have been saved
+                    MessageBox.Show("Changes saved successfully.")
+                End Using
+            Else
+                MessageBox.Show("No changes to save.")
+            End If
+        Catch ex As MySqlException
+            MessageBox.Show($"MySQL Error: {ex.Message}")
+        Catch ex As Exception
+            MessageBox.Show($"An error occurred: {ex.Message}")
+        End Try
+    End Sub
+
+    Private Sub Guna2Button8_Click(sender As Object, e As EventArgs) Handles Guna2Button8.Click
+        Form3.Show()
+        Me.Hide()
     End Sub
 End Class
