@@ -15,6 +15,7 @@ Public Class Form2
         Guna2GroupBox2.Visible = False
         Guna2GroupBox3.Visible = False
         Guna2GroupBox4.Visible = False
+        Guna2GroupBox1.Visible = False
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
