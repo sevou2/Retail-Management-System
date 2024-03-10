@@ -1,6 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form2
+
+
+
     Private connectionString As String = "Server=localhost;Database=rm;User ID=root;Password=admin;"
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Initialize controls visibility
@@ -77,43 +80,10 @@ Public Class Form2
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
-    Private Sub Guna2Button13_Click(sender As Object, e As EventArgs) Handles Guna2Button13.Click
-        UpdateQuantity(1)
-    End Sub
-    Private Sub Guna2Button14_Click(sender As Object, e As EventArgs) Handles Guna2Button14.Click
-        UpdateQuantity(-1)
-    End Sub
     Private Sub Guna2Button9_Click(sender As Object, e As EventArgs) Handles Guna2Button9.Click
         DeleteProduct()
     End Sub
-    ' Function to update quantity (add or remove)
-    Private Sub UpdateQuantity(quantityChange As Integer)
-        ' Check if any row is selected
-        If Guna2DataGridView1.SelectedRows.Count > 0 Then
-            ' Get the selected row
-            Dim selectedRow As DataGridViewRow = Guna2DataGridView1.SelectedRows(0)
 
-            ' Get the current quantity value from the selected row
-            Dim currentQty As Integer = Convert.ToInt32(selectedRow.Cells("pqty").Value)
-
-            ' Update the quantity with the change
-            currentQty += quantityChange
-
-            ' Ensure the quantity doesn't go below zero
-            If currentQty < 0 Then
-                MessageBox.Show("Quantity cannot be less than zero.")
-                Return
-            End If
-
-            ' Update the DataGridView with the new quantity value
-            selectedRow.Cells("pqty").Value = currentQty
-
-            ' Optionally, you can update the database with the new quantity value here
-            ' UpdateDatabaseWithNewQuantity(selectedRow.Cells("pid").Value, currentQty)
-        Else
-            MessageBox.Show("Please select a row to update.")
-        End If
-    End Sub
 
     ' Function to delete the selected product
     Private Sub DeleteProduct()
@@ -161,6 +131,48 @@ Public Class Form2
             End If
         Catch ex As MySqlException
             MessageBox.Show($"MySQL Error: {ex.Message}")
+        Catch ex As Exception
+            MessageBox.Show($"An error occurred: {ex.Message}")
+        End Try
+    End Sub
+    Private Sub Guna2Button6_Click(sender As Object, e As EventArgs) Handles Guna2Button6.Click
+        RegisterOrUpdateUser()
+    End Sub
+    Private Sub RegisterOrUpdateUser()
+        Dim username As String = Guna2TextBox6.Text
+        Dim password As String = Guna2TextBox5.Text
+
+        Try
+            Using connection As New MySqlConnection(connectionString)
+                connection.Open()
+
+                ' Check if the username already exists in the users table
+                Dim userExistsQuery As String = "SELECT COUNT(*) FROM users WHERE username = @username"
+                Using userExistsCmd As New MySqlCommand(userExistsQuery, connection)
+                    userExistsCmd.Parameters.AddWithValue("@username", username)
+                    Dim userCount As Integer = Convert.ToInt32(userExistsCmd.ExecuteScalar())
+
+                    If userCount > 0 Then
+                        ' User already exists, update the password
+                        Dim updatePasswordQuery As String = "UPDATE users SET password = @password WHERE username = @username"
+                        Using updatePasswordCmd As New MySqlCommand(updatePasswordQuery, connection)
+                            updatePasswordCmd.Parameters.AddWithValue("@password", password)
+                            updatePasswordCmd.Parameters.AddWithValue("@username", username)
+                            updatePasswordCmd.ExecuteNonQuery()
+                            MessageBox.Show("Password updated successfully.")
+                        End Using
+                    Else
+                        ' User does not exist, insert a new user
+                        Dim insertUserQuery As String = "INSERT INTO users (username, password) VALUES (@username, @password)"
+                        Using insertUserCmd As New MySqlCommand(insertUserQuery, connection)
+                            insertUserCmd.Parameters.AddWithValue("@username", username)
+                            insertUserCmd.Parameters.AddWithValue("@password", password)
+                            insertUserCmd.ExecuteNonQuery()
+                            MessageBox.Show("User registered successfully.")
+                        End Using
+                    End If
+                End Using
+            End Using
         Catch ex As Exception
             MessageBox.Show($"An error occurred: {ex.Message}")
         End Try
