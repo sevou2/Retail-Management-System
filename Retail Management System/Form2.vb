@@ -88,4 +88,15 @@ Public Class Form2
         End Try
     End Sub
 
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+
+        Guna2GroupBox4.Visible = True
+
+    End Sub
+
+    Private Sub Guna2Button7_Click(sender As Object, e As EventArgs) Handles Guna2Button7.Click
+
+        Guna2GroupBox5.Visible = True
+
+    End Sub
 End Class
