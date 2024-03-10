@@ -48,7 +48,7 @@ Public Class Form2
     End Sub
 
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs)
         Guna2GroupBox3.Visible = True
         Guna2Button5.Visible = True
     End Sub
