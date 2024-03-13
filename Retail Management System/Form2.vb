@@ -57,19 +57,19 @@ Public Class Form2
         Guna2Button5.Visible = True
     End Sub
 
-    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs)
         Try
             Using connection As New MySqlConnection(connectionString)
                 ' Open the database connection
                 connection.Open()
 
                 ' The SQL query to fetch all records from the product table
-                Dim query As String = "SELECT * FROM product"
+                Dim query = "SELECT * FROM product"
 
                 ' Create a data adapter to execute the query and fill the data table
                 Using da As New MySqlDataAdapter(query, connection)
                     ' Create a DataTable to hold the query results
-                    Dim dt As New DataTable()
+                    Dim dt As New DataTable
 
                     ' Fill the DataTable with the results of the SELECT query
                     da.Fill(dt)
@@ -263,5 +263,13 @@ Public Class Form2
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         Guna2GroupBox5.Visible = True
+    End Sub
+
+    Private Sub Guna2GroupBox3_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox3.Click
+
+    End Sub
+
+    Private Sub Guna2Button5_Click_1(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+
     End Sub
 End Class
