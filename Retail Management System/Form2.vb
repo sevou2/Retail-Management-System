@@ -10,6 +10,7 @@ Public Class Form2
         Guna2GroupBox3.Visible = False
         Guna2GroupBox4.Visible = False
         Guna2GroupBox5.Visible = False
+        Guna2Button5.Visible = False
     End Sub
 
 
@@ -55,7 +56,7 @@ Public Class Form2
         Guna2GroupBox3.Visible = True
     End Sub
 
-    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs)
+    Private Sub Guna2Button5_Click_1(sender As Object, e As EventArgs) Handles Guna2Button5.Click
         Try
             Using connection As New MySqlConnection(connectionString)
                 ' Open the database connection

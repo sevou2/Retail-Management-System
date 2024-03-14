@@ -151,7 +151,6 @@ Partial Class Form1
         Guna2TextBox2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2TextBox2.Size = New Size(290, 46)
         Guna2TextBox2.TabIndex = 3
-        Guna2TextBox2.Visible = False
         ' 
         ' Guna2GradientButton1
         ' 
@@ -199,7 +198,6 @@ Partial Class Form1
         Guna2TextBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2TextBox1.Size = New Size(291, 44)
         Guna2TextBox1.TabIndex = 0
-        Guna2TextBox1.Visible = False
         ' 
         ' Guna2PictureBox1
         ' 
@@ -214,7 +212,6 @@ Partial Class Form1
         Guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         Guna2PictureBox1.TabIndex = 1
         Guna2PictureBox1.TabStop = False
-        Guna2PictureBox1.Visible = False
         ' 
         ' Form1
         ' 
