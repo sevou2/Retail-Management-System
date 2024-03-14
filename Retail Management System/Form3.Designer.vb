@@ -67,13 +67,11 @@ Partial Class Form3
         DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
         Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Guna2DataGridView1.GridColor = Color.FromArgb(CByte(231), CByte(229), CByte(255))
-        Guna2DataGridView1.Location = New Point(144, 43)
-        Guna2DataGridView1.Margin = New Padding(3, 2, 3, 2)
+        Guna2DataGridView1.Location = New Point(165, 54)
         Guna2DataGridView1.Name = "Guna2DataGridView1"
         Guna2DataGridView1.RowHeadersVisible = False
         Guna2DataGridView1.RowHeadersWidth = 45
-        Guna2DataGridView1.RowTemplate.Height = 28
-        Guna2DataGridView1.Size = New Size(443, 182)
+        Guna2DataGridView1.Size = New Size(506, 231)
         Guna2DataGridView1.TabIndex = 0
         Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White
         Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -105,14 +103,13 @@ Partial Class Form3
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         Guna2Button2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button2.FillColor = Color.FromArgb(CByte(252), CByte(196), CByte(139))
+        Guna2Button2.FillColor = Color.FromArgb(CByte(54), CByte(191), CByte(165))
         Guna2Button2.Font = New Font("Segoe UI", 9F)
         Guna2Button2.ForeColor = SystemColors.WindowText
-        Guna2Button2.Location = New Point(158, 252)
-        Guna2Button2.Margin = New Padding(3, 2, 3, 2)
+        Guna2Button2.Location = New Point(181, 319)
         Guna2Button2.Name = "Guna2Button2"
         Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2Button2.Size = New Size(174, 39)
+        Guna2Button2.Size = New Size(199, 49)
         Guna2Button2.TabIndex = 2
         Guna2Button2.Text = "Refresh Data"
         ' 
@@ -124,27 +121,26 @@ Partial Class Form3
         Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         Guna2Button3.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button3.FillColor = Color.FromArgb(CByte(252), CByte(196), CByte(139))
+        Guna2Button3.FillColor = Color.FromArgb(CByte(54), CByte(191), CByte(165))
         Guna2Button3.Font = New Font("Segoe UI", 9F)
         Guna2Button3.ForeColor = SystemColors.WindowText
-        Guna2Button3.Location = New Point(413, 252)
-        Guna2Button3.Margin = New Padding(3, 2, 3, 2)
+        Guna2Button3.Location = New Point(472, 319)
         Guna2Button3.Name = "Guna2Button3"
         Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Button3.Size = New Size(174, 39)
+        Guna2Button3.Size = New Size(199, 49)
         Guna2Button3.TabIndex = 3
         Guna2Button3.Text = "Admin Dashboard"
         ' 
         ' Form3
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 19F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(700, 355)
+        BackColor = Color.FromArgb(CByte(218), CByte(244), CByte(239))
+        ClientSize = New Size(800, 450)
         Controls.Add(Guna2Button3)
         Controls.Add(Guna2Button2)
         Controls.Add(Guna2DataGridView1)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(3, 2, 3, 2)
         Name = "Form3"
         Text = "Form3"
         CType(Guna2DataGridView1, ComponentModel.ISupportInitialize).EndInit()
