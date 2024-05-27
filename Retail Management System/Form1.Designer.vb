@@ -69,11 +69,11 @@ Partial Class Form1
         Guna2GroupBox1.CustomizableEdges = CustomizableEdges9
         Guna2GroupBox1.Font = New Font("Segoe UI", 9F)
         Guna2GroupBox1.ForeColor = SystemColors.GradientActiveCaption
-        Guna2GroupBox1.Location = New Point(481, -40)
+        Guna2GroupBox1.Location = New Point(421, -36)
         Guna2GroupBox1.Margin = New Padding(2, 3, 2, 3)
         Guna2GroupBox1.Name = "Guna2GroupBox1"
         Guna2GroupBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges10
-        Guna2GroupBox1.Size = New Size(506, 562)
+        Guna2GroupBox1.Size = New Size(443, 503)
         Guna2GroupBox1.TabIndex = 0
         Guna2GroupBox1.Text = "Guna2GroupBox1"
         ' 
@@ -83,7 +83,7 @@ Partial Class Form1
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Segoe UI Emoji", 19.6981125F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.Black
-        Label3.Location = New Point(230, 158)
+        Label3.Location = New Point(201, 141)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(88, 38)
@@ -96,19 +96,19 @@ Partial Class Form1
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Segoe UI Historic", 29.8867931F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label4.ForeColor = Color.Black
-        Label4.Location = New Point(168, 101)
+        Label4.Location = New Point(181, 81)
         Label4.Margin = New Padding(2, 0, 2, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(207, 60)
+        Label4.Size = New Size(124, 60)
         Label4.TabIndex = 7
-        Label4.Text = "Welcome"
+        Label4.Text = "Myre"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.ForeColor = Color.Black
-        Label2.Location = New Point(138, 314)
+        Label2.Location = New Point(121, 281)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(67, 19)
@@ -120,7 +120,7 @@ Partial Class Form1
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
         Label1.ForeColor = Color.Black
-        Label1.Location = New Point(138, 237)
+        Label1.Location = New Point(121, 212)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(71, 19)
@@ -142,14 +142,14 @@ Partial Class Form1
         Guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         Guna2TextBox2.Font = New Font("Segoe UI", 9F)
         Guna2TextBox2.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        Guna2TextBox2.Location = New Point(126, 326)
-        Guna2TextBox2.Margin = New Padding(5, 4, 5, 4)
+        Guna2TextBox2.Location = New Point(110, 292)
+        Guna2TextBox2.Margin = New Padding(4, 4, 4, 4)
         Guna2TextBox2.Name = "Guna2TextBox2"
         Guna2TextBox2.PasswordChar = ChrW(0)
         Guna2TextBox2.PlaceholderText = ""
         Guna2TextBox2.SelectedText = ""
         Guna2TextBox2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2TextBox2.Size = New Size(290, 46)
+        Guna2TextBox2.Size = New Size(254, 41)
         Guna2TextBox2.TabIndex = 3
         ' 
         ' Guna2GradientButton1
@@ -166,11 +166,11 @@ Partial Class Form1
         Guna2GradientButton1.FillColor2 = Color.FromArgb(CByte(54), CByte(191), CByte(165))
         Guna2GradientButton1.Font = New Font("Segoe UI", 9F)
         Guna2GradientButton1.ForeColor = Color.White
-        Guna2GradientButton1.Location = New Point(175, 386)
+        Guna2GradientButton1.Location = New Point(153, 345)
         Guna2GradientButton1.Margin = New Padding(2, 3, 2, 3)
         Guna2GradientButton1.Name = "Guna2GradientButton1"
         Guna2GradientButton1.ShadowDecoration.CustomizableEdges = CustomizableEdges6
-        Guna2GradientButton1.Size = New Size(187, 43)
+        Guna2GradientButton1.Size = New Size(164, 38)
         Guna2GradientButton1.TabIndex = 2
         Guna2GradientButton1.Text = "Login"
         ' 
@@ -189,14 +189,14 @@ Partial Class Form1
         Guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         Guna2TextBox1.Font = New Font("Segoe UI", 9F)
         Guna2TextBox1.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        Guna2TextBox1.Location = New Point(125, 250)
-        Guna2TextBox1.Margin = New Padding(5, 4, 5, 4)
+        Guna2TextBox1.Location = New Point(109, 224)
+        Guna2TextBox1.Margin = New Padding(4, 4, 4, 4)
         Guna2TextBox1.Name = "Guna2TextBox1"
         Guna2TextBox1.PasswordChar = ChrW(0)
         Guna2TextBox1.PlaceholderText = ""
         Guna2TextBox1.SelectedText = ""
         Guna2TextBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
-        Guna2TextBox1.Size = New Size(291, 44)
+        Guna2TextBox1.Size = New Size(255, 39)
         Guna2TextBox1.TabIndex = 0
         ' 
         ' Guna2PictureBox1
@@ -204,20 +204,20 @@ Partial Class Form1
         Guna2PictureBox1.CustomizableEdges = CustomizableEdges1
         Guna2PictureBox1.Image = My.Resources.Resources.inventory_management_system
         Guna2PictureBox1.ImageRotate = 0F
-        Guna2PictureBox1.Location = New Point(-7, 0)
+        Guna2PictureBox1.Location = New Point(-6, 0)
         Guna2PictureBox1.Margin = New Padding(2, 3, 2, 3)
         Guna2PictureBox1.Name = "Guna2PictureBox1"
         Guna2PictureBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2PictureBox1.Size = New Size(511, 524)
+        Guna2PictureBox1.Size = New Size(447, 469)
         Guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         Guna2PictureBox1.TabIndex = 1
         Guna2PictureBox1.TabStop = False
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8F, 19F)
+        AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(973, 519)
+        ClientSize = New Size(851, 464)
         Controls.Add(Guna2PictureBox1)
         Controls.Add(Guna2GroupBox1)
         FormBorderStyle = FormBorderStyle.None
